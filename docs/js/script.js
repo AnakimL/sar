@@ -409,6 +409,7 @@ function monthForth() {
 
 $(document).ready(function() {
 
+
     var dis1 = $('.days__wrapper .days__item-row:nth-child(1)');
     for(i=0; i<= 6; i++){
         var itemAdd = dis1.children(".days__item")[i];
