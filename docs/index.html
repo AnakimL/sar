@@ -54,15 +54,15 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Цены на номера</a>
+                        <a class="nav-link" href="#priceNum">Цены на номера</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Цены в баре</a>
+                        <a class="nav-link" href="#priceBar">Цены в баре</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Как добраться</a>
+                        <a class="nav-link" href="#roadTrip">Как добраться</a>
                     </li>
-                    <li class="nav-item nav-item__tel">
+                    <li class=" nav-item__tel">
                         <a class="nav-link " href="tel:89298345702"> <span><img src="img/header/call-phone.svg" alt=""></span> 8 929 834 57 02</a>
                         <a class="nav-call" data-fancybox href="#callback">Обратный звонок</a>
                     </li>
@@ -74,22 +74,22 @@
         <div class="header__info">
             <div class="container">
                 <div class="row">
-                    <div class="col-12 col-md-6 col-lg-4">
+                    <div class="col-12 col-md-6 col-lg-4 mobile-order-2">
                         <div class="header__left">
 
                             <div class="header_form">
-                                <form action="#">
+                                <form action="#" id="headerForm" method="post">
                                     <div class="form__heading">Бронируйте номер для вашего отдыха</div>
 
 
                                     <div class="form-data__compos">
                                         <div class="form-data__arrival">
                                             <label for="arrival">Прибытие</label>
-                                            <input placeholder="дд.мм.гггг" id="arrival" type='text' class='datepicker-here' />
+                                            <input  placeholder="дд.мм.гггг" id="arrival" type='text' class='datepicker-here' name="arrival" />
                                         </div>
                                         <div class="form-data__dep">
                                             <label for="departure">Выезд</label>
-                                            <input placeholder="дд.мм.гггг" id="departure " type='text' class='datepicker-here' />
+                                            <input placeholder="дд.мм.гггг" id="departure " type='text' class='datepicker-here' name="departure" />
 
                                         </div>
 
@@ -100,7 +100,7 @@
 
                                         </div>
                                         <div class="form-data__composition">
-                                            <input type="range"  id="adults" name="group-adults" min="1" max="100" value="0" >
+                                            <input type="range"  id="adults" name="adults" min="1" max="100" value="0" >
                                             <button  class="form-data__button form-data__button--minus">
                                                 <span class="form-data__mark"><img src="img/header/minus.svg" alt=""></span>
                                             </button>
@@ -128,8 +128,8 @@
                                         </div>
                                     </div>
 
-                                    <div class="form-data__submit">
-                                        <button type="submit">Подобрать номер</button>
+                                    <div class="form-data__submit" >
+                                        <button type="submit" href="#freeNums">Подобрать номер</button>
                                     </div>
 
 
@@ -204,7 +204,7 @@
     </div>
 
 </section>
-    <section class="price">
+    <section class="price" id="priceNum">
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -282,16 +282,16 @@
 
         <div class="form__name">
             <label for="name">Имя</label>
-            <input type="text" id="name" placeholder="Имя">
+            <input type="text" id="name" placeholder="Имя" required>
         </div>
 
         <div class="form__tel">
             <label for="tel">Телефон</label>
-            <input type="text" id="tel" placeholder="+7 000 000 00 00">
+            <input type="tel" id="tel" placeholder="+7 000 000 00 00" required>
         </div>
 
         <div class="form__submit">
-            <button type="submit" disabled>Позвонить мне</button>
+            <button type="submit">Позвонить мне</button>
 
             <label class="form__privacy">
                 <div class="form__privacy-checkbox">
@@ -303,6 +303,215 @@
         </div>
 
     </form>
+</div>
+
+
+<div id="freeNums" style="display: none">
+   <div class="filter-card__header-title">
+       <h4>Доступны свободные номера</h4>
+       <p><span>01.07.2019 — 14.07.2019</span><span>Взрослые 2</span><span>Дети 1</span></p>
+   </div>
+
+    <div class="filter-cards__wrapper">
+
+        <a class="filter-card__link filter-card__header-link" data-fancybox="freenumbers" href="#reserveNum3">
+            <div class="filter-card">
+                <div class="filter__image"><img src="img/filter/nomero.png" alt=""></div>
+                <div class="filter__name">
+                    <div class="filter__class">Люкс #201</div>
+                    <div class="filter__price"><span>900 P.</span></div>
+                </div>
+                <div class="filter__info">
+                    <div class="filter__info--icon"><span><img src="img/filter/house.svg" alt=""></span></div>
+                    <div class="filter__info--icon"><span><img src="img/filter/bed.svg" alt=""></span></div>
+                    <div class="filter__info--icon"><span><img src="img/filter/tv.svg" alt=""></span></div>
+                    <div class="filter__info--icon"><span><img src="img/filter/fridge.svg" alt=""></span></div>
+                    <div class="filter__info--icon"><span><img src="img/filter/shower.svg" alt=""></span></div>
+                    <div class="filter__info--icon"><span><img src="img/filter/air.svg" alt=""></span></div>
+                </div>
+
+
+                <div class="filter__reserve">
+                    <div class="filter-left">
+                        <span>Подробнее</span>
+                    </div>
+                    <div class="filter-right" >
+                        <span>Забронировать</span> <span><img src="img/filter/cup.svg" alt=""></span>
+                    </div>
+                </div>
+            </div>
+
+        </a>
+        <a class="filter-card__link filter-card__header-link" data-fancybox="freenumbers" href="#reserveNum4">
+            <div class="filter-card">
+                <div class="filter__image"><img src="img/filter/nomero.png" alt=""></div>
+                <div class="filter__name">
+                    <div class="filter__class">Люкс #201</div>
+                    <div class="filter__price"><span>900 P.</span></div>
+                </div>
+                <div class="filter__info">
+                    <div class="filter__info--icon"><span><img src="img/filter/house.svg" alt=""></span></div>
+                    <div class="filter__info--icon"><span><img src="img/filter/bed.svg" alt=""></span></div>
+                    <div class="filter__info--icon"><span><img src="img/filter/tv.svg" alt=""></span></div>
+                    <div class="filter__info--icon"><span><img src="img/filter/fridge.svg" alt=""></span></div>
+                    <div class="filter__info--icon"><span><img src="img/filter/shower.svg" alt=""></span></div>
+                    <div class="filter__info--icon"><span><img src="img/filter/air.svg" alt=""></span></div>
+                </div>
+
+
+                <div class="filter__reserve">
+                    <div class="filter-left">
+                        <span>Подробнее</span>
+                    </div>
+                    <div class="filter-right" >
+                        <span>Забронировать</span> <span><img src="img/filter/cup.svg" alt=""></span>
+                    </div>
+                </div>
+            </div>
+
+        </a>
+        <a class="filter-card__link filter-card__header-link" >
+            <div class="filter-card">
+                <div class="filter__image"><img src="img/filter/nomero.png" alt=""></div>
+                <div class="filter__name">
+                    <div class="filter__class">Люкс #201</div>
+                    <div class="filter__price"><span>900 P.</span></div>
+                </div>
+                <div class="filter__info">
+                    <div class="filter__info--icon"><span><img src="img/filter/house.svg" alt=""></span></div>
+                    <div class="filter__info--icon"><span><img src="img/filter/bed.svg" alt=""></span></div>
+                    <div class="filter__info--icon"><span><img src="img/filter/tv.svg" alt=""></span></div>
+                    <div class="filter__info--icon"><span><img src="img/filter/fridge.svg" alt=""></span></div>
+                    <div class="filter__info--icon"><span><img src="img/filter/shower.svg" alt=""></span></div>
+                    <div class="filter__info--icon"><span><img src="img/filter/air.svg" alt=""></span></div>
+                </div>
+
+
+                <div class="filter__reserve">
+                    <div class="filter-left">
+                        <span>Подробнее</span>
+                    </div>
+                    <div class="filter-right" >
+                        <span>Забронировать</span> <span><img src="img/filter/cup.svg" alt=""></span>
+                    </div>
+                </div>
+            </div>
+
+        </a>
+        <a class="filter-card__link filter-card__header-link" >
+            <div class="filter-card">
+                <div class="filter__image"><img src="img/filter/nomero.png" alt=""></div>
+                <div class="filter__name">
+                    <div class="filter__class">Люкс #201</div>
+                    <div class="filter__price"><span>900 P.</span></div>
+                </div>
+                <div class="filter__info">
+                    <div class="filter__info--icon"><span><img src="img/filter/house.svg" alt=""></span></div>
+                    <div class="filter__info--icon"><span><img src="img/filter/bed.svg" alt=""></span></div>
+                    <div class="filter__info--icon"><span><img src="img/filter/tv.svg" alt=""></span></div>
+                    <div class="filter__info--icon"><span><img src="img/filter/fridge.svg" alt=""></span></div>
+                    <div class="filter__info--icon"><span><img src="img/filter/shower.svg" alt=""></span></div>
+                    <div class="filter__info--icon"><span><img src="img/filter/air.svg" alt=""></span></div>
+                </div>
+
+
+                <div class="filter__reserve">
+                    <div class="filter-left">
+                        <span>Подробнее</span>
+                    </div>
+                    <div class="filter-right" >
+                        <span>Забронировать</span> <span><img src="img/filter/cup.svg" alt=""></span>
+                    </div>
+                </div>
+            </div>
+
+        </a>
+        <a class="filter-card__link filter-card__header-link" >
+            <div class="filter-card">
+                <div class="filter__image"><img src="img/filter/nomero.png" alt=""></div>
+                <div class="filter__name">
+                    <div class="filter__class">Люкс #201</div>
+                    <div class="filter__price"><span>900 P.</span></div>
+                </div>
+                <div class="filter__info">
+                    <div class="filter__info--icon"><span><img src="img/filter/house.svg" alt=""></span></div>
+                    <div class="filter__info--icon"><span><img src="img/filter/bed.svg" alt=""></span></div>
+                    <div class="filter__info--icon"><span><img src="img/filter/tv.svg" alt=""></span></div>
+                    <div class="filter__info--icon"><span><img src="img/filter/fridge.svg" alt=""></span></div>
+                    <div class="filter__info--icon"><span><img src="img/filter/shower.svg" alt=""></span></div>
+                    <div class="filter__info--icon"><span><img src="img/filter/air.svg" alt=""></span></div>
+                </div>
+
+
+                <div class="filter__reserve">
+                    <div class="filter-left">
+                        <span>Подробнее</span>
+                    </div>
+                    <div class="filter-right" >
+                        <span>Забронировать</span> <span><img src="img/filter/cup.svg" alt=""></span>
+                    </div>
+                </div>
+            </div>
+
+        </a>
+        <a class="filter-card__link filter-card__header-link" >
+            <div class="filter-card">
+                <div class="filter__image"><img src="img/filter/nomero.png" alt=""></div>
+                <div class="filter__name">
+                    <div class="filter__class">Люкс #201</div>
+                    <div class="filter__price"><span>900 P.</span></div>
+                </div>
+                <div class="filter__info">
+                    <div class="filter__info--icon"><span><img src="img/filter/house.svg" alt=""></span></div>
+                    <div class="filter__info--icon"><span><img src="img/filter/bed.svg" alt=""></span></div>
+                    <div class="filter__info--icon"><span><img src="img/filter/tv.svg" alt=""></span></div>
+                    <div class="filter__info--icon"><span><img src="img/filter/fridge.svg" alt=""></span></div>
+                    <div class="filter__info--icon"><span><img src="img/filter/shower.svg" alt=""></span></div>
+                    <div class="filter__info--icon"><span><img src="img/filter/air.svg" alt=""></span></div>
+                </div>
+
+
+                <div class="filter__reserve">
+                    <div class="filter-left">
+                        <span>Подробнее</span>
+                    </div>
+                    <div class="filter-right" >
+                        <span>Забронировать</span> <span><img src="img/filter/cup.svg" alt=""></span>
+                    </div>
+                </div>
+            </div>
+
+        </a>
+        <a class="filter-card__link filter-card__header-link" >
+            <div class="filter-card">
+                <div class="filter__image"><img src="img/filter/nomero.png" alt=""></div>
+                <div class="filter__name">
+                    <div class="filter__class">Люкс #201</div>
+                    <div class="filter__price"><span>900 P.</span></div>
+                </div>
+                <div class="filter__info">
+                    <div class="filter__info--icon"><span><img src="img/filter/house.svg" alt=""></span></div>
+                    <div class="filter__info--icon"><span><img src="img/filter/bed.svg" alt=""></span></div>
+                    <div class="filter__info--icon"><span><img src="img/filter/tv.svg" alt=""></span></div>
+                    <div class="filter__info--icon"><span><img src="img/filter/fridge.svg" alt=""></span></div>
+                    <div class="filter__info--icon"><span><img src="img/filter/shower.svg" alt=""></span></div>
+                    <div class="filter__info--icon"><span><img src="img/filter/air.svg" alt=""></span></div>
+                </div>
+
+
+                <div class="filter__reserve">
+                    <div class="filter-left">
+                        <span>Подробнее</span>
+                    </div>
+                    <div class="filter-right" >
+                        <span>Забронировать</span> <span><img src="img/filter/cup.svg" alt=""></span>
+                    </div>
+                </div>
+            </div>
+
+        </a>
+
+    </div>
 </div>
 
 <div id="priceChange" class="price__change" style="display: none">
@@ -370,14 +579,14 @@
     <form action="">
     <div class="container">
         <div class="row">
-            <div class="col-12 col-md-4">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-4">
                 <div class="reserve__form-left">
 
 
                         <div class="form-data__line">
                             <div class="form-data__arrival">
                                 <label for="arrival2">Прибытие</label>
-                                <input placeholder="дд.мм.гггг" id="arrival2" type='text' class='datepicker-here' />
+                                <input required placeholder="дд.мм.гггг" id="arrival2" type='text' class='datepicker-here' />
                             </div>
                             <div class="form-data__dep">
                                 <label for="departure2">Выезд</label>
@@ -467,12 +676,12 @@
 
             </div>
 
-            <div class="col-12 col-md-8">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-8">
                 <div class="reserve__form-right">
                     <div class="form-data__line">
                         <div class="form-data__name">
                             <label for="name">Имя</label>
-                            <input type="text" id="name" placeholder="Имя">
+                            <input required type="text" id="name" placeholder="Имя">
                         </div>
 
                         <div class="form-data__surname">
@@ -486,7 +695,7 @@
 
                         <div class="form-data__tel">
                             <label for="tel">Телефон</label>
-                            <input type="text" id="tel" placeholder="+7 000 000 00 00">
+                            <input required type="tel" id="tel" placeholder="+7 000 000 00 00">
                         </div>
 
                         <div class="form-data__road">
@@ -514,26 +723,26 @@
                         <legend>Интересуют экскурсии</legend>
                         <div class="form-data__excurs">
                             <div class="line-center">
-                                <input type="checkbox" id="redPolyna" name="excursion[]" value="Брюнет">
+                                <input type="checkbox" id="redPolyna" name="excursion[]" value="Красная поляна">
                                 <label for="redPolyna">Красная поляна</label>
                             </div>
 
                             <div class="line-center">
-                                <input type="checkbox" id="blueSea" name="excursion[]" value="Шатен">
+                                <input type="checkbox" id="blueSea" name="excursion[]" value="Синее море">
                                 <label for="blueSea">Синее море</label>
                             </div>
                             <div class="line-center">
-                                <input type="checkbox" id="mountain" name="excursion[]" value="Блондин">
+                                <input type="checkbox" id="mountain" name="excursion[]" value="Горы">
                                 <label for="mountain">Горы</label>
                             </div>
 
                             <div class="line-center">
-                                <input type="checkbox" id="waterfall" name="excursion[]" value="Рыжый">
+                                <input type="checkbox" id="waterfall" name="excursion[]" value="Водопады">
                                 <label for="waterfall">Водопады</label>
                             </div>
 
                             <div class="line-center">
-                                <input type="checkbox" id="nightSochi" name="excursion[]" value="Русый">
+                                <input type="checkbox" id="nightSochi" name="excursion[]" value="Ночной Сочи">
                                 <label for="nightSochi">Ночной Сочи</label>
                             </div>
                         </div>
@@ -603,8 +812,26 @@
                     <img src="img/bar/big.png" alt="">
                 </div>
                 <div class="foods__nav">
-                    <button><span><img src="img/suite/left.png" alt=""></span></button>
-                    <button><span><img src="img/suite/right.png" alt=""></span></button>
+                    <button data-fancybox-prev="" class="fancybox-button fancybox-button--arrow_left" title="Previous"><span><img src="img/suite/left.png" alt=""></span></button>
+                    <button data-fancybox-next="" class="fancybox-button fancybox-button--arrow_right" title="Next"><span><img src="img/suite/right.png" alt=""></span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="foods4" class="foods" style="display: none;">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="foods__header">Водка с содой  <span>129 Р.</span></div>
+                <div class="foods__title">Напитки</div>
+                <div class="foods__image">
+                    <img src="img/bar/big.png" alt="">
+                </div>
+                <div class="foods__nav">
+                    <button data-fancybox-prev="" class="fancybox-button fancybox-button--arrow_left" title="Previous"><span><img src="img/suite/left.png" alt=""></span></button>
+                    <button data-fancybox-next="" class="fancybox-button fancybox-button--arrow_right" title="Next"><span><img src="img/suite/right.png" alt=""></span></button>
                 </div>
             </div>
         </div>
@@ -716,6 +943,189 @@
         </div>
     </div>
 </div>
+
+
+<div id="manageForm" class="room" style="display: none;">
+    <form action="">
+    <div class="container">
+        <div class="room__header">
+            Управление номерами
+        </div>
+        <div class="room-container">
+            <div class="room-row">
+                <div class="room-row__left">
+                    <div class="form-data__room">
+                        <label for="room">Выбрать номер</label>
+                        <select id="room" class="form-control">
+                            <option>101</option>
+                            <option>102</option>
+                            <option>103</option>
+                            <option>201</option>
+                            <option>202</option>
+                        </select>
+                    </div>
+                    <div class="room-manager">
+                        <div class="room__change"><img src="../img/common/change.png" alt=""><span><a href="#">изменить</a></span></div>
+                        <div class="room__delete"><img src="../img/common/trash2.png" alt=""><span><a href="#" style="color: #D42061;">удалить</a></span></div>
+                    </div>
+                </div>
+                <div class="room-row__right"> <div class="room__add">
+                        <a href="#"> <img src="../img/filter/circle-plus.png" alt=""> <span>Добавить новый номер</span></a>
+                    </div></div>
+
+            </div>
+            <div class="room-row">
+                <div class="room-row__left">
+                    <div class="form-data__road">
+                        <label for="room">Категория</label>
+                        <select id="room" class="form-control">
+                            <option>Эконом</option>
+                            <option>Люкс</option>
+
+                        </select>
+                    </div>
+                </div>
+                <div class="room-row__right">
+                    <div class="room__seats">
+                        <div class="form-data__floor">
+                            <label for="floor">Этаж</label>
+                            <select id="floor" class="form-control">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                            </select>
+                        </div>
+
+                        <div class="form-data__seats">
+                            <label for="seats">Мест</label>
+                            <select id="seats" class="form-control">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                        </div>
+
+                        <div class="form-data__child">
+                            <label for="child">Детских мест</label>
+                            <select id="child" class="form-control">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="room-row">
+                <div class="room-row__left">
+                    <div class="room-options">
+
+                        <fieldset>
+                            <legend></legend>
+                            <div class="room-options">
+                                <div class=" room-option line-center">
+                                    <input type="checkbox" id="roomTv" name="services[]" value="Телевизор">
+                                    <label for="roomTv"><span><img src="img/filter/house.svg" alt=""></span>Телевизор</label>
+                                </div>
+
+                                <div class="line-center room-option">
+                                    <input type="checkbox" id="roomAir" name="services[]"  value="Кондиционер">
+                                    <label for="roomAir"><span><img src="img/filter/air.svg" alt=""></span>Кондиционер</label>
+                                </div>
+                                <div class="line-center room-option">
+                                    <input type="checkbox" id="roomWc" name="services[]"  value="Душ и туалет в номере">
+                                    <label for="roomWc"><span><img src="img/filter/shower.svg" alt=""></span>Душ и туалет в номере</label>
+                                </div>
+
+                                <div class="line-center room-option">
+                                    <input type="checkbox" id="roomFridge" name="services[]"  value="Холодильник">
+                                    <label for="roomFridge"><span><img src="img/filter/fridge.svg" alt=""></span>Холодильник</label>
+                                </div>
+
+                                <div class="line-center room-option">
+                                    <input type="checkbox" id="roomFi" name="services[]"  value="Wi-fi">
+                                    <label for="roomFi"><span><img src="img/filter/wifi.svg" alt=""></span>Wi-fi</label>
+                                </div>
+                            </div>
+
+
+                        </fieldset>
+
+                    </div>
+                </div>
+                <div class="room-row__right">
+
+
+                    <div class="room__info">
+                        <div class="room__info-title">Описание номера</div>
+                        <div class="room__info-text">
+                        <textarea name="roomInfo" id="" cols="30" rows="5">Тут небольшое описание номера. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                        </textarea>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+<div class="col-12">
+    <div class="room__pics-title">Фотографии</div>
+    <div class="room__pics">
+        <div class="room__pic">
+            <input type="checkbox" id="picOne" name="pics[]"  value="1">
+            <label for="picOne"><img src="img/slider-room/slide1.png" alt=""></label>
+        </div>
+
+        <div class="room__pic">
+            <input type="checkbox" id="picTwo" name="pics[]"  value="2">
+            <label for="picTwo"><img src="img/slider-room/slide2.png" alt=""></label>
+        </div>
+
+        <div class="room__pic">
+            <input type="checkbox" id="picThree" name="pics[]"  value="3">
+            <label for="picThree"><img src="img/slider-room/slide3.png" alt=""></label>
+        </div>
+
+        <div class="room__pic">
+            <input type="checkbox" id="picFour" name="pics[]"  value="4">
+            <label for="picFour"><img src="img/slider-room/slide1.png" alt=""></label>
+        </div>
+
+        <div class="room__pic-add">
+
+                    <label class="label">
+                        <span class="title"><img src="../img/filter/plus.png" alt=""></span>
+                        <input type="file">
+                    </label>
+
+           </div>
+
+
+    </div>
+    <div class="room__func">
+        <div class="room__pic-titul">
+            <input type="checkbox" id="picThree" name="pics[]"  value="3">
+            <label for="picThree">титульная</label>
+        </div>
+        <div class="room__pic-delete"><a href="#"><img src="../img/common/trash.png" alt=""></a></div>
+    </div>
+<div class="room__submit">
+    <a href="#" >Сохранить</a>
+</div>
+
+</div>
+        </div>
+    </div>
+    </form>
+</div>
     <section class="slider-room">
         <div class="row">
             <div class="col-12">
@@ -756,7 +1166,7 @@
             
             <div class="col-12">
                 <div class="filter-mobile lap-hide">
-                    <a href="#">Фильтры и сортировка</a>
+                    <a href="#filterNum" data-fancybox>Фильтры и сортировка</a>
                 </div>
                 <div class="filter-option__wrapper">
                     <div class="filter-option">
@@ -850,7 +1260,7 @@
                         </div>
 
                     </a>
-                    <a class="filter-card__link" data-fancybox="numbers" href="#reserveNum3">
+                    <a class="filter-card__link" >
                         <div class="filter-card">
                             <div class="filter__image"><img src="img/filter/nomero3.png" alt=""></div>
                             <div class="filter__name">
@@ -877,7 +1287,7 @@
                         </div>
 
                     </a>
-                    <a class="filter-card__link" data-fancybox="numbers" href="#reserveNum4">
+                    <a class="filter-card__link" >
                         <div class="filter-card">
                             <div class="filter__image"><img src="img/filter/nomero.png" alt=""></div>
                             <div class="filter__name">
@@ -904,7 +1314,7 @@
                         </div>
 
                     </a>
-                    <a class="filter-card__link" data-fancybox="numbers" href="#reserveNum4">
+                    <a class="filter-card__link" >
                         <div class="filter-card">
                             <div class="filter__image"><img src="img/filter/nomero.png" alt=""></div>
                             <div class="filter__name">
@@ -931,7 +1341,7 @@
                         </div>
 
                     </a>
-                    <a class="filter-card__link" data-fancybox="numbers" href="#reserveNum4">
+                    <a class="filter-card__link" >
                         <div class="filter-card">
                             <div class="filter__image"><img src="img/filter/nomero.png" alt=""></div>
                             <div class="filter__name">
@@ -1310,7 +1720,7 @@
         </div>
     </div>
 </div>
-    <section class="bar">
+    <section class="bar" id="priceBar">
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -1387,22 +1797,22 @@
                 <div class="foodMenu__title">Блюда на гриле</div>
                 <div class="foodMenu__plate">
                     <div class="foodMenu-item"><img src="../img/bar/fish.png" alt="">
-                        <div class="foodMenu-item__info">
+                        <div class="foodMenu-item__info" data-fancybox="foodgallery" href="#foods">
                             <span>Ребрышки</span>
                             <span>460 Р.</span>
                         </div></div>
                     <div class="foodMenu-item"><img src="../img/bar/burger.png" alt="">
-                        <div class="foodMenu-item__info">
+                        <div class="foodMenu-item__info" data-fancybox="foodgallery" href="#foods1">
                             <span>Бургер</span>
                             <span>250 Р.</span>
                         </div></div>
                     <div class="foodMenu-item"><img src="../img/bar/zar.png" alt="">
-                        <div class="foodMenu-item__info">
+                        <div class="foodMenu-item__info" data-fancybox="foodgallery" href="#foods2">
                             <span>Жаркое</span>
                             <span>160 Р.</span>
                         </div></div>
                     <div class="foodMenu-item"><img src="../img/bar/bak.png" alt="">
-                        <div class="foodMenu-item__info">
+                        <div class="foodMenu-item__info" data-fancybox="foodgallery" href="#foods3">
                             <span>Баклажаны</span>
                             <span>60 Р.</span>
                         </div></div>
@@ -1411,47 +1821,47 @@
             <div class="col-12">
                 <div class="foodMenu__title">Напитки</div>
                 <div class="foodMenu__plate">
-                    <div class="foodMenu-item" data-fancybox="foodgallery"><img src="../img/bar/mojito.png" alt="">
+                    <div class="foodMenu-item" data-fancybox="drinkgallery" href="#foods4"><img src="../img/bar/mojito.png" alt="">
                         <div class="foodMenu-item__info">
                             <span>Ребрышки</span>
                             <span>460 Р.</span>
                         </div></div>
-                    <div class="foodMenu-item" data-fancybox="foodgallery"><img src="../img/bar/vodka.png" alt="">
+                    <div class="foodMenu-item" data-fancybox="drinkgallery" href="#foods5"><img src="../img/bar/vodka.png" alt="">
                         <div class="foodMenu-item__info">
                             <span>Бургер</span>
                             <span>250 Р.</span>
                         </div></div>
-                    <div class="foodMenu-item" data-fancybox="foodgallery"><img src="../img/bar/orang.png" alt="">
+                    <div class="foodMenu-item" data-fancybox="drinkgallery" href="#foods6"><img src="../img/bar/orang.png" alt="">
                         <div class="foodMenu-item__info">
                             <span>Жаркое</span>
                             <span>160 Р.</span>
                         </div></div>
-                    <div class="foodMenu-item" data-fancybox="foodgallery"><img src="../img/bar/bok.png" alt="">
+                    <div class="foodMenu-item" data-fancybox="drinkgallery" href="#foods7"><img src="../img/bar/bok.png" alt="">
                         <div class="foodMenu-item__info">
                             <span>Баклажаны</span>
                             <span>60 Р.</span>
                         </div></div>
-                    <div class="foodMenu-item" data-fancybox="foodgallery"><img src="../img/bar/beer.png" alt="">
+                    <div class="foodMenu-item" data-fancybox="drinkgallery" href="#foods8"><img src="../img/bar/beer.png" alt="">
                         <div class="foodMenu-item__info">
                             <span>Баклажаны</span>
                             <span>60 Р.</span>
                         </div></div>
-                    <div class="foodMenu-item" data-fancybox="foodgallery"><img src="../img/bar/rom.png" alt="">
+                    <div class="foodMenu-item" data-fancybox="drinkgallery" href="#foods9"><img src="../img/bar/rom.png" alt="">
                         <div class="foodMenu-item__info">
                             <span>Баклажаны</span>
                             <span>60 Р.</span>
                         </div></div>
-                    <div class="foodMenu-item" data-fancybox="foodgallery"><img src="../img/bar/martini.png" alt="">
+                    <div class="foodMenu-item" data-fancybox="drinkgallery" href="#foods10"><img src="../img/bar/martini.png" alt="">
                         <div class="foodMenu-item__info">
                             <span>Баклажаны</span>
                             <span>60 Р.</span>
                         </div></div>
-                    <div class="foodMenu-item" data-fancybox="foodgallery"><img src="../img/bar/shamp.png" alt="">
+                    <div class="foodMenu-item" data-fancybox="drinkgallery" href="#foods11"><img src="../img/bar/shamp.png" alt="">
                         <div class="foodMenu-item__info">
                             <span>Баклажаны</span>
                             <span>60 Р.</span>
                         </div></div>
-                    <div class="foodMenu-item" data-fancybox="foodgallery" href="#foods"><img src="../img/bar/oreo.png" alt="">
+                    <div class="foodMenu-item" data-fancybox="foodgallery" href="#foods12"><img src="../img/bar/oreo.png" alt="">
                         <div class="foodMenu-item__info">
                             <span>Баклажаны</span>
                             <span>60 Р.</span>
@@ -1540,7 +1950,7 @@
         <a href="#reserveForm" data-fancybox>Забронировать с экскурсией</a>
     </div>
 </section>
-    <section class="road">
+    <section class="road" id="roadTrip">
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -1697,6 +2107,10 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/bootstrap/main.js" integrity="sha256-YLvGa/6UrzsYa6pgPIwxuiXtsS854c/pImjL3kfK+sY=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/core/locales/ru.js" integrity="sha256-eyaxfjgqJuQ/JYg5TTCDjag6unRgPguvL20yhGVUB6g=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/js/bootstrap.js" integrity="sha256-K0KkaRh1fs/UYfKcnzBK9G/X7HgzuaeVI1hJPS8Sxs4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/additional-methods.min.js" integrity="sha256-vb+6VObiUIaoRuSusdLRWtXs/ewuz62LgVXg2f1ZXGo=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js" integrity="sha256-sPB0F50YUDK0otDnsfNHawYmA5M0pjjUf4TvRJkGFrI=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/localization/messages_ru.min.js" integrity="sha256-/zc0l5Lz9N5yjcmhOS9Tgg3STtUQTpZqTBdxqUGGheY=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.min.js" integrity="sha256-2Pjr1OlpZMY6qesJM68t2v39t+lMLvxwpa8QlRjJroA=" crossorigin="anonymous"></script>
 <!--Скрипт-->
 <script src="js/script.js"></script>
 
