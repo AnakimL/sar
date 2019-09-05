@@ -294,6 +294,86 @@ $(function () {
 });
 
 
+$(document).ready(
+
+    function() {
+        function inst_api () {
+            var api = 'https://www.instagram.com/greece/?__a=1';
+            $.getJSON(
+                api,
+                function (data) {
+                    var src = data.graphql.user.edge_owner_to_timeline_media.edges;
+                    for(var imgs in src) {
+                        var display = src[imgs].node.display_url;
+                        var img_src = src[imgs].node.thumbnail_resources[2].src;
+                        var img = '<img src="'+ img_src +'" alt="">'
+                        $(".insta-slider").slick("slickAdd", '<a href='+ display +'><div class="insta-item">'+ img +'</div></a>');
+                    }
+                }
+            )
+        };
+
+        inst_api ();
+
+        function slick () {
+            $('.insta-slider').slick({
+                dots: false,
+                infinite: true,
+                speed: 500,
+                centerPadding: '40px',
+                centerMode: true,
+                slidesToShow: 4,
+                slidesToScroll: 1,
+                responsive: [
+                    {
+                        breakpoint: 1600,
+                        settings: {
+                            slidesToShow: 4,
+                            slidesToScroll: 1,
+                            infinite: true
+                        }
+                    },
+                    {
+                        breakpoint: 1280,
+                        settings: {
+                            slidesToShow: 4,
+                            slidesToScroll: 4,
+                            infinite: true
+                        }
+                    },
+                    {
+                        breakpoint: 960,
+                        settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 3,
+                            infinite: true
+                        }
+                    },
+                    {
+                        breakpoint: 640,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 2
+                        }
+                    },
+                    {
+                        breakpoint: 400,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    },
+                    // You can unslick at a given breakpoint now by adding:
+                    // settings: "unslick"
+                    // instead of a settings object
+                ]
+            });
+        };
+        slick ();
+
+    })
+
+
 
 
 let cal = document.querySelector(".days__start");
